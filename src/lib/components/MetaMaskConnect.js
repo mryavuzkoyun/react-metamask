@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Button, Badge, InputGroup, InputGroupText, Container, Row, Col } from 'reactstrap';
+import { Button, Badge, InputGroup, InputGroupText } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './metamask-fox.svg';
 
@@ -55,7 +55,7 @@ export default class MetaMaskConnect extends Component {
 
     render() {
         return (
-            <div width={window.width}>
+            <div style={{ border: '1px solid orange', margin: '5px', padding: '5px'}}>
                 <InputGroup>
                     <InputGroupText>
                         <img src={logo} />
@@ -73,9 +73,9 @@ export default class MetaMaskConnect extends Component {
                     ''
                     :
                     <InputGroupText>
-                            <Button outline color='danger' onClick={this.btnMetaMaskConnect}>
-                                Connect to MetaMask
-                            </Button>
+                        <Button outline color='danger' onClick={this.btnMetaMaskConnect}>
+                            Connect to MetaMask
+                        </Button>
                     </InputGroupText>
                     }
                 </InputGroup>

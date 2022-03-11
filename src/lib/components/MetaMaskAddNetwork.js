@@ -1,16 +1,18 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Table, Button} from 'reactstrap';
+import {Table, Button, InputGroup, InputGroupText} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 /*
     Sample usage:
+    showNetworkConfig is by default false. Will just show a button. 
+    Set showNetworkConfig to true to see the network config details.
 
     <MetaMaskAddNetwork chainId='0x42' chainName='O K Exchain'  
         rpcUrl='https://exchainrpc.okex.org' 
         blockExplorerUrl='https://www.oklink.com/okexchain' 
         nativeCurrency={{name: 'OKEX', symbol: 'OKT', decimals: 18}}
-        showNetworkConfig=false
+        showNetworkConfig=true
     >
     </MetaMaskAddNetwork>
 */
@@ -46,14 +48,20 @@ export default class MetaMaskAddNetwork extends Component {
     render() {
         if (!this.props.showNetworkConfig) {
             return (
-                <Button outline color='primary' onClick={this.btnMetaMaskAddNetwork}>
-                    Add {this.props.chainName} to MetaMask Networks
-                </Button>
+                <div style={{ border: '1px solid orange', margin: '5px', padding: '5px'}}>
+                    <InputGroup>
+                        <InputGroupText>
+                            <Button color='primary' onClick={this.btnMetaMaskAddNetwork}>
+                                Add {this.props.chainName} Network
+                            </Button>
+                        </InputGroupText>
+                    </InputGroup>
+                </div>
             );
         }
 
         return (
-        <div>    
+        <div style={{ border: '1px solid orange', margin: '5px', padding: '5px'}}>    
         <Table bordered striped>
             <thead>
                 <tr>
@@ -120,9 +128,15 @@ export default class MetaMaskAddNetwork extends Component {
                 </tr>
             </tbody>
         </Table>
-        <Button outline color='primary' onClick={this.btnMetaMaskAddNetwork}>
-            Add {this.props.chainName} to MetaMask Networks
-        </Button>
+        <div style={{ border: '1px solid orange', margin: '5px', padding: '5px'}}>
+            <InputGroup>
+                <InputGroupText>
+                    <Button color='primary' onClick={this.btnMetaMaskAddNetwork}>
+                        Add {this.props.chainName} Network
+                    </Button>
+                </InputGroupText>
+            </InputGroup>
+        </div>
         </div>
     )}
 } 
@@ -141,5 +155,5 @@ MetaMaskAddNetwork.protoTypes = {
 }
 
 MetaMaskAddNetwork.defaultProps = {
-    showNetworkConfig: true
+    showNetworkConfig: false
 }

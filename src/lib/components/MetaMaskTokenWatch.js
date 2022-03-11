@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button} from 'reactstrap';
+import {Button, InputGroup, InputGroupText} from 'reactstrap';
 import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -44,7 +44,15 @@ export default class MetaMaskTokenWatch extends Component {
 
     render () {
         return (
-            <Button color='primary' onClick={this.btnMetaMaskTokenWatch}>Add {this.props.symbol} to MetaMask</Button>
+        <div style={{ border: '1px solid orange', margin: '5px', padding: '5px'}}>
+            <InputGroup>
+                <InputGroupText>
+                    <Button color='primary' onClick={this.btnMetaMaskTokenWatch}>
+                    Add {this.props.symbol} Token
+                    </Button>
+                </InputGroupText>
+            </InputGroup>
+        </div>
         );
     }
 }
