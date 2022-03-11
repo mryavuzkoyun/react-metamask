@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Button} from 'reactstrap';
 import PropTypes from 'prop-types';
-import {Button} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 /*
@@ -14,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     >
     </WatchTokenInMetaMask>
 */
-export class MetaMaskTokenWatch extends Component {
+export default class MetaMaskTokenWatch extends Component {
     constructor(props) {
         super(props);
     }
