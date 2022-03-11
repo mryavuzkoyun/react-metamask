@@ -11,15 +11,15 @@ export default class MetaMaskConnect extends Component {
         super(props);
 
         if(window.ethereum) {
-            window.ethereum.on('chainChanged', this.buttonConnectMetaMask);
-            window.ethereum.on('accountsChanged', this.buttonConnectMetaMask);
+            window.ethereum.on('chainChanged', this.btnMetaMaskConnect);
+            window.ethereum.on('accountsChanged', this.btnMetaMaskConnect);
         }
     }
 
     componentWillUnmount() {
         if (window.ethereum) {
-            window.ethereum.removeListener('chainChanged', this.buttonConnectMetaMask);
-            window.ethereum.removeListener('accountsChanged', this.buttonConnectMetaMask);
+            window.ethereum.removeListener('chainChanged', this.btnMetaMaskConnect);
+            window.ethereum.removeListener('accountsChanged', this.btnMetaMaskConnect);
         }
     }
 
