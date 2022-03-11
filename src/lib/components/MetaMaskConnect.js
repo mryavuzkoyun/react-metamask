@@ -55,7 +55,7 @@ export default class MetaMaskConnect extends Component {
 
     render() {
         return (
-            <div style={{ border: '1px solid orange', margin: '5px', padding: '5px'}}>
+            <div style={{padding: '2px'}}>
                 <InputGroup>
                     <InputGroupText>
                         <img src={logo} />

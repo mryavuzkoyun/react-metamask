@@ -48,7 +48,7 @@ export default class MetaMaskAddNetwork extends Component {
     render() {
         if (!this.props.showNetworkConfig) {
             return (
-                <div style={{ border: '1px solid orange', margin: '5px', padding: '5px'}}>
+                <div style={{padding: '2px'}}>
                     <InputGroup>
                         <InputGroupText>
                             <Button color='primary' onClick={this.btnMetaMaskAddNetwork}>
@@ -61,7 +61,7 @@ export default class MetaMaskAddNetwork extends Component {
         }
 
         return (
-        <div style={{ border: '1px solid orange', margin: '5px', padding: '5px'}}>    
+        <div style={{padding: '2px'}}>    
         <Table bordered striped>
             <thead>
                 <tr>
@@ -128,7 +128,7 @@ export default class MetaMaskAddNetwork extends Component {
                 </tr>
             </tbody>
         </Table>
-        <div style={{ border: '1px solid orange', margin: '5px', padding: '5px'}}>
+        <div style={{padding: '2px'}}>
             <InputGroup>
                 <InputGroupText>
                     <Button color='primary' onClick={this.btnMetaMaskAddNetwork}>
