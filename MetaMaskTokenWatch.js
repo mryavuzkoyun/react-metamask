@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Button} from 'reactstrap';
 import PropTypes from 'prop-types';
+import {Button} from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 /*
     Sample usage:
