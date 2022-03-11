@@ -7,11 +7,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     Sample usage:
     By default type is ERC20 and decimals is 18. No need to provide in props
     
-    <WatchTokenInMetaMask 
+    <MetaMaskTokenWatch 
         address='0x155040625D7ae3e9caDA9a73E3E44f76D3Ed1409' 
         symbol='REVO'
     >
-    </WatchTokenInMetaMask>
+    </MetaMaskTokenWatch>
 */
 export default class MetaMaskTokenWatch extends Component {
     constructor(props) {
