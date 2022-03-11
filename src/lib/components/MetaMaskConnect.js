@@ -9,11 +9,6 @@ export default class MetaMaskConnect extends Component {
     
     constructor(props) {
         super(props);
-
-        if(window.ethereum) {
-            window.ethereum.on('chainChanged', this.btnMetaMaskConnect);
-            window.ethereum.on('accountsChanged', this.btnMetaMaskConnect);
-        }
     }
 
     componentWillUnmount() {
@@ -50,44 +45,40 @@ export default class MetaMaskConnect extends Component {
     }
 
     componentDidMount() {
-        if (window.ethereum) {
+        if(window.ethereum) {
+            window.ethereum.on('chainChanged', this.btnMetaMaskConnect);
+            window.ethereum.on('accountsChanged', this.btnMetaMaskConnect);
+
             this.btnMetaMaskConnect();
         }
     }
 
     render() {
         return (
-            <div width={window.width} align='right'>
-                <Container align='right'>
-                <Row>
-                    <Col xs='6'></Col>
-                    <Col xs='6' align='right'> 
-                        <InputGroup>
-                            <InputGroupText>
-                                <img src={logo} />
-                            </InputGroupText>
-                            <InputGroupText>
-                                <Badge color='success'>
-                                    @{this.getNetworkName(this.state.networkId)} 
-                                </Badge>
-                            </InputGroupText>
-                            <InputGroupText>
-                                {this.state.address}
-                            </InputGroupText>
-                            {
-                            this.state.connected ?
-                            ''
-                            :
-                            <InputGroupText>
-                                    <Button outline color='danger' onClick={this.btnMetaMaskConnect}>
-                                        Connect to MetaMask
-                                    </Button>
-                            </InputGroupText>
-                            }
-                        </InputGroup>
-                    </Col>
-                </Row>
-                </Container>
+            <div width={window.width}>
+                <InputGroup>
+                    <InputGroupText>
+                        <img src={logo} />
+                    </InputGroupText>
+                    <InputGroupText>
+                        <Badge color='success'>
+                            @{this.getNetworkName(this.state.networkId)} 
+                        </Badge>
+                    </InputGroupText>
+                    <InputGroupText>
+                        {this.state.address}
+                    </InputGroupText>
+                    {
+                    this.state.connected ?
+                    ''
+                    :
+                    <InputGroupText>
+                            <Button outline color='danger' onClick={this.btnMetaMaskConnect}>
+                                Connect to MetaMask
+                            </Button>
+                    </InputGroupText>
+                    }
+                </InputGroup>
             </div>
         );
     }
