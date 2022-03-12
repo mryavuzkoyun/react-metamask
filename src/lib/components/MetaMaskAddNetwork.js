@@ -19,10 +19,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class MetaMaskAddNetwork extends Component {
     
-    constructor(props) {
-        super(props);
-        state = {showNetworkConfig : props.showNetworkConfig};
-    }
+    state = {showNetworkConfig : props.showNetworkConfig};
     
     btnMetaMaskAddNetwork = async () => {
         try {
