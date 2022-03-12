@@ -19,6 +19,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class MetaMaskAddNetwork extends Component {
     
+    constructor(props) {
+        super(props);
+        state = {showNetworkConfig : props.showNetworkConfig};
+    }
+    
     btnMetaMaskAddNetwork = async () => {
         try {
             await window.ethereum.request({
@@ -43,8 +48,12 @@ export default class MetaMaskAddNetwork extends Component {
         }
     }
 
+    btnToggleShowNetworkConfig() {
+        this.setState({showNetworkConfig : !this.state.showNetworkConfig});
+    }
+
     render() {
-        if (!this.props.showNetworkConfig) {
+        if (!this.state.showNetworkConfig) {
             return (
                 <div style={{padding: '2px'}}>
                     <InputGroup>
@@ -129,6 +138,9 @@ export default class MetaMaskAddNetwork extends Component {
         <div style={{padding: '2px'}}>
             <InputGroup>
                 <InputGroupText>
+                    <Button size='sm' outline color='primary' onClick={this.btnToggleShowNetworkConfig}>
+                        ...
+                    </Button>
                     <Button size='sm' color='primary' onClick={this.btnMetaMaskAddNetwork}>
                         Add {this.props.chainName} Network
                     </Button>
