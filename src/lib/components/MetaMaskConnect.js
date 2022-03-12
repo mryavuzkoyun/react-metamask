@@ -6,10 +6,6 @@ import logo from './metamask-fox.svg';
 export default class MetaMaskConnect extends Component {
     
     state = {networkId: null, address: null, connected: false};
-    
-    constructor(props) {
-        super(props);
-    }
 
     componentWillUnmount() {
         if (window.ethereum) {
@@ -73,7 +69,7 @@ export default class MetaMaskConnect extends Component {
                     ''
                     :
                     <InputGroupText>
-                        <Button outline color='danger' onClick={this.btnMetaMaskConnect}>
+                        <Button size='sm' outline color='danger' onClick={this.btnMetaMaskConnect}>
                             Connect to MetaMask
                         </Button>
                     </InputGroupText>

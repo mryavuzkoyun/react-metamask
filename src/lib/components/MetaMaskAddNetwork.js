@@ -18,10 +18,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 */
 
 export default class MetaMaskAddNetwork extends Component {
-    constructor(props) {
-        super(props);
-    }
-
+    
     btnMetaMaskAddNetwork = async () => {
         try {
         await window.ethereum.request({
@@ -51,7 +48,7 @@ export default class MetaMaskAddNetwork extends Component {
                 <div style={{padding: '2px'}}>
                     <InputGroup>
                         <InputGroupText>
-                            <Button color='primary' onClick={this.btnMetaMaskAddNetwork}>
+                            <Button size='sm' color='primary' onClick={this.btnMetaMaskAddNetwork}>
                                 Add {this.props.chainName} Network
                             </Button>
                         </InputGroupText>
@@ -131,7 +128,7 @@ export default class MetaMaskAddNetwork extends Component {
         <div style={{padding: '2px'}}>
             <InputGroup>
                 <InputGroupText>
-                    <Button color='primary' onClick={this.btnMetaMaskAddNetwork}>
+                    <Button size='sm' color='primary' onClick={this.btnMetaMaskAddNetwork}>
                         Add {this.props.chainName} Network
                     </Button>
                 </InputGroupText>

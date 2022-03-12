@@ -14,10 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     </MetaMaskTokenWatch>
 */
 export default class MetaMaskTokenWatch extends Component {
-    constructor(props) {
-        super(props);
-    }
-
+    
     btnMetaMaskTokenWatch = () => {
         window.ethereum
         .request({
@@ -47,7 +44,7 @@ export default class MetaMaskTokenWatch extends Component {
         <div style={{padding: '2px'}}>
             <InputGroup>
                 <InputGroupText>
-                    <Button color='primary' onClick={this.btnMetaMaskTokenWatch}>
+                    <Button size='sm' color='primary' onClick={this.btnMetaMaskTokenWatch}>
                     Add {this.props.symbol} Token
                     </Button>
                 </InputGroupText>
