@@ -21,22 +21,23 @@ export default class MetaMaskAddNetwork extends Component {
     
     btnMetaMaskAddNetwork = async () => {
         try {
-        await window.ethereum.request({
-            method: 'wallet_addEthereumChain',
-            params: [
-            {
-                chainId: this.props.chainId,
-                chainName: this.props.chainName,
-                rpcUrls: [this.props.rpcUrl],
-                blockExplorerUrls: [this.props.blockExplorerUrl],
-                nativeCurrency: {
-                    name: this.props.nativeCurrency.name,
-                    symbol: this.props.nativeCurrency.symbol, 
-                    decimals: this.props.nativeCurrency.decimals
-                }
-            },
-            ],
-        });
+            await window.ethereum.request({
+                method: 'wallet_addEthereumChain',
+                params: [
+                {
+                    chainId: this.props.chainId,
+                    chainName: this.props.chainName,
+                    rpcUrls: [this.props.rpcUrl],
+                    blockExplorerUrls: [this.props.blockExplorerUrl],
+                    nativeCurrency: {
+                        name: this.props.nativeCurrency.name,
+                        symbol: this.props.nativeCurrency.symbol, 
+                        decimals: this.props.nativeCurrency.decimals
+                    }
+                },
+                ],
+            });
+            alert(`${this.props.chainName} (${this.props.chainId}) network added to MetaMask!`)
         } catch (addError) {
             alert(`Cannot add ${this.props.chainName} (${this.props.chainId}) to MetaMask!`)
         }

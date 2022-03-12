@@ -31,7 +31,7 @@ export default class MetaMaskTokenWatch extends Component {
         })
         .then((success) => {
             if (success) {
-                console.log('FOO successfully added to wallet!');
+                console.log('Token successfully added to wallet!');
             } else {
                 throw new Error('Something went wrong. Cannot add token to MetaMask!');
             }
