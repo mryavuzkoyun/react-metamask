@@ -4,7 +4,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class MetaMaskPublicEncKey extends Component {
 
+    // We get same Encryption Public Key for same account regargdless of selected chain
     state = {pubEncKey: null};
+
+    componentDidMount() {
+        if(window.ethereum) {
+            window.ethereum.on('accountsChanged', () => {
+                this.setState({pubEncKey: null})
+            });
+        }
+    }
+
+    componentWillUnmount() {
+        if (window.ethereum) {
+            window.ethereum.removeListener('accountsChanged', () => {
+                this.setState({pubEncKey: null})
+            });
+        }
+    }
 
     btnFetchPublicEncKey = () => {
         window.ethereum
