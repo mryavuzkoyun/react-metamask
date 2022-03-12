@@ -74,14 +74,14 @@ export default class MetaMaskAddNetwork extends Component {
         <Table bordered striped>
             <thead>
                 <tr>
-                    <th>Key</th>
+                    <th>Parameter</th>
                     <th>Value</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th scope='row'>
-                    Chain Id
+                    ChainId
                     </th>
                     <td>
                     {this.props.chainId}
@@ -89,7 +89,7 @@ export default class MetaMaskAddNetwork extends Component {
                 </tr>
                 <tr>
                     <th scope='row'>
-                    Chain Name
+                    ChainName
                     </th>
                     <td>
                     {this.props.chainName}
@@ -97,7 +97,7 @@ export default class MetaMaskAddNetwork extends Component {
                 </tr>
                 <tr>
                     <th scope='row'>
-                    Rpc Url
+                    RpcUrl
                     </th>
                     <td>
                     {this.props.rpcUrl}
@@ -105,7 +105,7 @@ export default class MetaMaskAddNetwork extends Component {
                 </tr>
                 <tr>    
                     <th scope='row'>
-                    Block Explorer Url
+                    ExplorerUrl
                     </th>
                     <td>
                     {this.props.blockExplorerUrl}
@@ -113,7 +113,7 @@ export default class MetaMaskAddNetwork extends Component {
                 </tr>
                 <tr>
                 <th scope='row'>
-                    Native Currency Name
+                    Currency
                     </th>
                     <td>
                     {this.props.nativeCurrency.name}
@@ -121,7 +121,7 @@ export default class MetaMaskAddNetwork extends Component {
                 </tr> 
                 <tr> 
                     <th scope='row'>
-                    Native Currency Symbol
+                    Symbol
                     </th>
                     <td>
                     {this.props.nativeCurrency.symbol}
@@ -129,7 +129,7 @@ export default class MetaMaskAddNetwork extends Component {
                 </tr>
                 <tr>    
                     <th scope='row'>
-                    Native Currency Decimals
+                    Decimals
                     </th>
                     <td>
                     {this.props.nativeCurrency.decimals}
