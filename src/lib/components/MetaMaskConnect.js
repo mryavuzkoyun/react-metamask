@@ -36,7 +36,7 @@ export default class MetaMaskConnect extends Component {
             this.setState({address: accounts[0], networkId: networkId, connected: true});
         } 
         catch(e) {
-            alert('Please make sure MetaMask is installed and logged in !');
+            console.log('Please make sure MetaMask is installed and logged in !');
         }
     }
 

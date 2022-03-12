@@ -18,13 +18,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 */
 
 export default class MetaMaskAddNetwork extends Component {
-    
-    state = {};
 
-    constructor(props) {
-        super(props);
-        state = {showNetworkConfig : props.showNetworkConfig};
-    }
+    state = {showNetworkConfig: this.props.showNetworkConfig};
 
     btnMetaMaskAddNetwork = async () => {
         try {
@@ -44,14 +39,14 @@ export default class MetaMaskAddNetwork extends Component {
                 },
                 ],
             });
-            alert(`${this.props.chainName} (${this.props.chainId}) network added to MetaMask!`)
+            console.log(`${this.props.chainName} (${this.props.chainId}) network added to MetaMask!`)
         } catch (addError) {
-            alert(`Cannot add ${this.props.chainName} (${this.props.chainId}) to MetaMask!`)
+            console.log(`Cannot add ${this.props.chainName} (${this.props.chainId}) to MetaMask!`)
         }
     }
 
-    btnToggleShowNetworkConfig() {
-        this.setState({showNetworkConfig : !this.state.showNetworkConfig});
+    btnToggleShowNetworkConfig = () => {
+        this.setState({showNetworkConfig: !this.state.showNetworkConfig});
     }
 
     render() {
@@ -59,6 +54,11 @@ export default class MetaMaskAddNetwork extends Component {
             return (
                 <div style={{padding: '2px'}}>
                     <InputGroup>
+                        <InputGroupText>
+                            <Button size='sm' outline color='primary' onClick={this.btnToggleShowNetworkConfig}>
+                            ...
+                            </Button>
+                        </InputGroupText>
                         <InputGroupText>
                             <Button size='sm' color='primary' onClick={this.btnMetaMaskAddNetwork}>
                                 Add {this.props.chainName} Network
@@ -143,6 +143,8 @@ export default class MetaMaskAddNetwork extends Component {
                     <Button size='sm' outline color='primary' onClick={this.btnToggleShowNetworkConfig}>
                         ...
                     </Button>
+                </InputGroupText>
+                <InputGroupText>
                     <Button size='sm' color='primary' onClick={this.btnMetaMaskAddNetwork}>
                         Add {this.props.chainName} Network
                     </Button>
