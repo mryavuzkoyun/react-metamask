@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Button, InputGroup, InputGroupText} from 'reactstrap';
 import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css';
+import logo from './metamask-fox.svg';
 
 /*
     Sample usage:
@@ -41,13 +43,14 @@ export default class MetaMaskTokenWatch extends Component {
 
     render () {
         return (
-        <div style={{padding: '2px'}}>
+        <div>
             <InputGroup>
-                <InputGroupText>
-                    <Button size='sm' color='primary' onClick={this.btnMetaMaskTokenWatch}>
-                    Add {this.props.symbol} Token
-                    </Button>
-                </InputGroupText>
+            <InputGroupText className="MetaMaskWatch">
+                <img src={logo} />
+                <Button className="ml-1" size='sm' color='primary' onClick={this.btnMetaMaskTokenWatch}>
+                Add {this.props.symbol} Token
+                </Button>
+            </InputGroupText>
             </InputGroup>
         </div>
         );
